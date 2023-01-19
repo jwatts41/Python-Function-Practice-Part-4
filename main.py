@@ -31,5 +31,12 @@ print(num_within(8,4,2))
 
 
 #Write a function that out the first n rows of Pascal's Triangle
-def pascal():
-    
+def pascal(n):
+    for i in range(n):
+        row = [1]*(i+1)
+        for j in range(1, i):
+            prev_row = row
+            row[j] = prev_row[j-1] + prev_row[j]
+            print(row)
+
+pascal(5)
